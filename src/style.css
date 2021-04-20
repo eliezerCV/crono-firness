@@ -1,6 +1,6 @@
-@import "./popup.css";
-@import "./loader.css";
-@import "./vars.css";
+@import "./css/vars.css";
+@import "./css/popup.css";
+@import "./css/loader.css";
 
 
 body {
