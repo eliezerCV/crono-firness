@@ -44,8 +44,11 @@ function getConfFromLocal() {
         let conf = JSON.parse(localStorage.getItem('conf_fitness'))
         timePerBreak =  conf.timePerBreak;
         timePerExercise = conf.timePerExercise;
-        beepsQuantity = conf.beepsQuantity;  
+        beepsQuantity = conf.beepsQuantity;
     }
+    timePerBreakInput.value = timePerBreak;
+    timePerExerciseInput.value = timePerExercise;
+    beepsQuantitySelect.value = beepsQuantity;
     
     setTimeout(() => {
         mask.classList.remove('show-mask');

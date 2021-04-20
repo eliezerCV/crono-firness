@@ -1,7 +1,7 @@
 :root {
+    --primary: #ff6768;   
+    --gray: #6b778d;
     --dark: #17223b;
     --dark-mid: #263859;
-    --gray: #6b778d;
-    --primary: #ff6768;   
     --success: rgb(79, 189, 79);
 }

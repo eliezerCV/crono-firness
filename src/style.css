@@ -1,14 +1,11 @@
 @import "./css/vars.css";
-@import "./css/popup.css";
-@import "./css/loader.css";
 
-
-body {
+* {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--dark);
 }
+body {background-color: var(--dark);}
 .main {
     width: 50%;
     margin: 0 auto;
@@ -21,7 +18,6 @@ body {
 }
 .crono {
     width: 100%;
-    height: 200px;
     border: solid 1px var(--dark-mid);
     border-radius: 10px 10px 0 0;
     display: flex;
@@ -31,7 +27,7 @@ body {
 .timer  {
     display: flex;
     flex-direction: column;
-    font-size: 4rem;
+    width: 100%;
 }
 .timer-header i {
     position: absolute;
@@ -45,10 +41,11 @@ body {
     cursor: pointer;
     color: var(--gray);
 }
-.timer > * {
+.timer-header, .full-time {
     text-align: center;
     color: var(--primary);
 }
+.timer-header span {font-size: 4rem;}
 #timer_counter:hover {cursor: pointer;}
 #timer_counter_sec {
     font-size: 2rem;
@@ -66,103 +63,17 @@ body {
     font-size: 2rem;
     color: var(--gray);
 }
-/*  EL FORMULARIO DE CONFIGURACIÓN  ************************************/
-.show-mask {
-    display: block !important;
-}
-.show-modal-conf {
-    top: 10% !important;
-}
-.mask {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #00000090;
-    transition: all ease 0.2s;
-}
-.form-config {
-    position: fixed;
-    top: -50%;
-    left: 30%;
-    width: 40%;
-    margin: auto;
-    transition: all ease 0.5s;
-}
-#form_config .form {
-    box-shadow: 0 0 1px 1px var(--gray);
-    background-color: #263859;
-}
-.form .info-form {
-    padding: 10px 0 10px 0;
-    background-color: var(--dark);
-    display: flex;
-    justify-content: center;
-    color: var(--gray);
-}
-.info-form h3 {margin: 0;}
-.info-form i {
-    position: absolute;
-    left: 90%;
-    color: var(--gray);
-    font-size: 1.5rem;
-    transition: all ease 0.2s;
-}
-.info-form i:hover {
-    cursor: pointer;
-    color: var(--primary);
-}
-.form .form-group {
-    display: flex;
-    padding: 10px;
-    margin: auto;
-}
-.form .form-control {
-    width: 40%;
-    margin: auto;
-    margin-bottom: 10px;
-}
-.form-control label {
-    color: var(--gray);
-    font-weight: 600;
-}
-.form-control input, select {
-    width: 100%;
-    color: var(--gray);
-    box-sizing: border-box;
-    padding: 5px;
-    font-size: 1.1rem;
-    border-radius: 5px;
-    background-color: var(--dark);
-    border: solid 1px var(--gray);
-}
-.form-control button  {
-    width: 100%;
-    background-color: var(--dark);
-    border: solid 1px var(--gray);
-    box-shadow: 0 0 1px 1px var(--gray);
-    padding: 5px;
-    font-size: 1.1rem;
-    border-radius: 5px;
-    color: var(--gray);
-}
-/*  EL FORMULARIO DE CONFIGURACIÓN  ************************************/
 .selected {
     color: var(--primary);
     font-weight: 600;
 }
 @media(max-width: 1366px) {
-    .timer {font-size: 2.5rem;}
+    .timer-header span {font-size: 2.5rem;}
     #timer_counter_sec {font-size: 1.5rem;}
     .counter {font-size: 1.2rem;}
 }
 @media(max-width: 768px) {
     .main {
         width: 90%;
-        /* top: 0; */
     }
-}
-@media(max-width: 600px) {
 }

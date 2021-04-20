@@ -1,0 +1,47 @@
+#routine {
+    position: relative;
+}
+.circuit {
+    padding: 0 10px;
+    text-align: center;
+    color: var(--gray)
+}
+.circiut-header {
+    font-size: 1.2rem;
+    border: solid 2px var(--gray);
+    padding: 5px 0;
+    background-color: var(--dark-mid);
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    justify-content: center;
+}
+.load-bar-header {
+    width: 40%;
+    border-top: solid 5px var(--success);
+    position: absolute;
+    top: 2px;
+    left: 12px;
+}
+.circiut-header i {
+    position: relative;
+    right: 35%;
+}
+.exercices {
+    border: solid 2px var(--gray);
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+}
+.exe{
+    padding: 5px 0;
+    position: relative;
+    border-bottom: solid 1px #cccccc10;
+}
+.load-bar-exercice {
+    width: calc(35% - 20px);
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    height: 25px;
+    border-bottom: solid 5px var(--success);
+}
+.exe span {color: #cccccc; font-weight: 800;}
