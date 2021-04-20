@@ -17,7 +17,8 @@
 }
 .load-bar-header {
     width: 40%;
-    border-top: solid 5px var(--success);
+    border-top: solid 5px var(--gray);
+    box-shadow: 0 1px 1px 1px #ccc;
     position: absolute;
     top: 2px;
     left: 12px;
@@ -39,9 +40,10 @@
 .load-bar-exercice {
     width: calc(35% - 20px);
     position: absolute;
-    top: 1px;
+    top: 26px;
     left: 1px;
-    height: 25px;
-    border-bottom: solid 5px var(--success);
+    border: none;
+    border-bottom: solid 5px var(--gray);
+    box-shadow: 0 1px 1px 1px #ccc;
 }
 .exe span {color: #cccccc; font-weight: 800;}

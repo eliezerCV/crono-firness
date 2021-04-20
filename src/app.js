@@ -5,4 +5,6 @@ import "./css/loader.css";
 import "./style.css";
 
 
+
 import './js/timer';
+import './js/routine_loader';
