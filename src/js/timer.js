@@ -2,26 +2,24 @@ import * as global from './routine_conf';
 
 var inter = null;
 var secValue = 1000;
-var minutes = 0;
+var localTime = 0;
 var globalTime = 0;
 var exercise = false;
 
-var timerCounterMinutesElem = document.querySelector("#timer_counter");
-var timerCounterSecondsElem = document.querySelector("#timer_counter_sec");
+var timerCounterSecondsElem = document.querySelector("#timer_counter");
+var timerCounterGlobalSecondsElem = document.querySelector("#timer_counter_sec");
 var btnStartTimer = document.querySelector("#timer_counter");
 
 btnStartTimer.addEventListener("click", startTimer);
 
-// global.getConfFromLocal();
-
 function startTimer() {
     resetTimer();
     inter = setInterval(() => {
-        timerCounterSecondsElem.innerHTML = getSecsFormat(++globalTime);
-
-        if(exercise && globalTime >= global.timePerExercise) {
+        timerCounterGlobalSecondsElem.innerHTML = getSecsFormat(++globalTime);;
+        timerCounterSecondsElem.innerHTML = getSecsFormat(++localTime);
+        if(exercise && localTime >= global.timePerExercise) {
             addTime(exercise);
-        } else if(!exercise && globalTime >= global.timePerBreak) {
+        } else if(!exercise && localTime >= global.timePerBreak) {
             addTime(exercise);
         }
     }, secValue);
@@ -29,8 +27,8 @@ function startTimer() {
 
 function addTime(ex) {
     exercise = ex;
-    if (exercise) timerCounterMinutesElem.innerHTML = ++minutes;
-    globalTime = 0;
+    localTime = 0;
+    if (exercise) timerCounterSecondsElem.innerHTML = getSecsFormat(localTime);
     beep();
 }
 
