@@ -44,16 +44,16 @@ function addTime(ex) {
         document.querySelector(`#exe_routine${circuitsCompleted}_check_${exercisesCompleted}`).classList.add("exercise-completed");
         exercisesCompleted++;
         if (exercisesCompleted >= exercisesPerGroup[circuitsCompleted]) {
-            let elemc = document.querySelector(`#routine_check_${circuitsCompleted}`).classList.add("exercise-completed");
-            circuitsCompleted++;
+            document.querySelector(`#routine_check_${circuitsCompleted}`).classList.add("exercise-completed");
+            document.querySelector(`#list_exes${circuitsCompleted}`).style.display = "none";
             exercisesCompleted = 0;
+            circuitsCompleted++;
         }
     }
     exercise = !exercise;
     beep();
-    console.log(circuitsCompleted + " " + routines.length);
     if (circuitsCompleted >= routines.length) {
-        console.log("Exercises completed");
+        timerCounterSecondsElem.innerHTML = "Terminaste!";
         resetTimer();
     }
 }

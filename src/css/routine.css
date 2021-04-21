@@ -4,7 +4,8 @@
 .circuit {
     padding: 0 10px;
     text-align: center;
-    color: var(--gray)
+    color: var(--gray);
+    margin-bottom: 10px;
 }
 .circiut-header {
     font-size: 1.2rem;
@@ -23,8 +24,10 @@
     top: 2px;
     left: 12px;
 }
+.exercices {display: none;}
+.show {display: block !important;}
 .exercise-completed {color: var(--success) !important;}
-.circiut-header i:first-of-type {margin-left: 10px;}
+.circiut-header i:first-of-type {margin-left: 10px; cursor: pointer;}
 .circiut-header i:last-of-type  {margin-right: 10px;}
 .exercices {
     border: solid 2px var(--gray);
