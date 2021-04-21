@@ -1,10 +1,14 @@
 import * as global from './routine_conf';
+import {routines} from './routine_loader';
 
 var inter = null;
 var secValue = 1000;
 var localTime = 0;
 var globalTime = 0;
-var exercise = false;
+var exercise = true;
+var exercisesCompleted = 0;
+var exercisesPerGroup = [];
+var circuitsCompleted = 0;
 
 var timerCounterSecondsElem = document.querySelector("#timer_counter");
 var timerCounterGlobalSecondsElem = document.querySelector("#timer_counter_sec");
@@ -14,6 +18,7 @@ btnStartTimer.addEventListener("click", startTimer);
 
 function startTimer() {
     resetTimer();
+    timer();
     inter = setInterval(() => {
         timerCounterGlobalSecondsElem.innerHTML = getSecsFormat(++globalTime);;
         timerCounterSecondsElem.innerHTML = getSecsFormat(++localTime);
@@ -25,11 +30,32 @@ function startTimer() {
     }, secValue);
 }
 
+function timer() {
+    routines.forEach((r, indexr) => {
+        exercisesPerGroup.push(r.exercises.length);
+    });
+}
+
 function addTime(ex) {
-    exercise = ex;
     localTime = 0;
-    if (exercise) timerCounterSecondsElem.innerHTML = getSecsFormat(localTime);
+
+    if (exercise) {
+        timerCounterSecondsElem.innerHTML = getSecsFormat(localTime);
+        document.querySelector(`#exe_routine${circuitsCompleted}_check_${exercisesCompleted}`).classList.add("exercise-completed");
+        exercisesCompleted++;
+        if (exercisesCompleted >= exercisesPerGroup[circuitsCompleted]) {
+            let elemc = document.querySelector(`#routine_check_${circuitsCompleted}`).classList.add("exercise-completed");
+            circuitsCompleted++;
+            exercisesCompleted = 0;
+        }
+    }
+    exercise = !exercise;
     beep();
+    console.log(circuitsCompleted + " " + routines.length);
+    if (circuitsCompleted >= routines.length) {
+        console.log("Exercises completed");
+        resetTimer();
+    }
 }
 
 function resetTimer() {

@@ -13,7 +13,7 @@
     background-color: var(--dark-mid);
     border-radius: 5px 5px 0 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 .load-bar-header {
     width: 40%;
@@ -23,10 +23,9 @@
     top: 2px;
     left: 12px;
 }
-.circiut-header i {
-    position: relative;
-    right: 35%;
-}
+.exercise-completed {color: var(--success) !important;}
+.circiut-header i:first-of-type {margin-left: 10px;}
+.circiut-header i:last-of-type  {margin-right: 10px;}
 .exercices {
     border: solid 2px var(--gray);
     border-top: none;
@@ -36,7 +35,10 @@
     padding: 5px 0;
     position: relative;
     border-bottom: solid 1px #cccccc10;
+    display: flex;
+    justify-content: space-between;
 }
+.exe > * {margin: 0 10px;}
 .load-bar-exercice {
     width: calc(35% - 20px);
     position: absolute;
