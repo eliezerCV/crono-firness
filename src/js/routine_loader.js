@@ -7,18 +7,18 @@ export var routines = [
         name: "Calentamiento",
         completed: false,
         exercises: [
-            {name: "ejercicio de ejempo 1", completed: true}, 
-            {name: "ejercicio de ejempo 2", completed: true},
-            {name: "ejercicio de ejempo 3", completed: false}
+            {name: "ejercicio de ejempo 1", completed: true, duration: 10, breakTime: 5}, 
+            {name: "ejercicio de ejempo 2", completed: true, duration: 10, breakTime: 5},
+            {name: "ejercicio de ejempo 3", completed: false, duration: 10, breakTime: 5}
         ]
     },
     {
         name: "Cardio",
         completed: false,
         exercises: [
-            {name: "ejercicio de ejempo 1", completed: false}, 
-            {name: "ejercicio de ejempo 2", completed: false},
-            {name: "ejercicio de ejempo 3", completed: false}
+            {name: "ejercicio de ejempo 1", completed: false, duration: 10, breakTime: 5}, 
+            {name: "ejercicio de ejempo 2", completed: false, duration: 10, breakTime: 5},
+            {name: "ejercicio de ejempo 3", completed: false, duration: 10, breakTime: 5}
         ]
     }
 ];

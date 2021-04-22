@@ -46,8 +46,18 @@ function addTime(ex) {
         if (exercisesCompleted >= exercisesPerGroup[circuitsCompleted]) {
             document.querySelector(`#routine_check_${circuitsCompleted}`).classList.add("exercise-completed");
             document.querySelector(`#list_exes${circuitsCompleted}`).style.display = "none";
+            let btn_show_hide = document.querySelector(`#btn_show_hide_exes${circuitsCompleted}`);
+            btn_show_hide.classList.remove("fa-minus");
+            btn_show_hide.classList.add("fa-plus");
+
             exercisesCompleted = 0;
             circuitsCompleted++;
+            if (circuitsCompleted < routines.length) {
+                document.querySelector(`#list_exes${circuitsCompleted}`).style.display = "block";
+                let btn_show_hide_next = document.querySelector(`#btn_show_hide_exes${circuitsCompleted}`);
+                btn_show_hide_next.classList.remove("fa-plus");
+                btn_show_hide_next.classList.add("fa-minus");
+            }
         }
     }
     exercise = !exercise;
