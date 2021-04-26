@@ -22,9 +22,9 @@ function startTimer() {
     inter = setInterval(() => {
         timerCounterGlobalSecondsElem.innerHTML = getSecsFormat(++globalTime);;
         timerCounterSecondsElem.innerHTML = getSecsFormat(++localTime);
-        if(exercise && localTime >= global.timePerExercise) {
+        if(exercise && localTime >= routines[circuitsCompleted].exercises[exercisesCompleted].duration) {
             addTime(exercise);
-        } else if(!exercise && localTime >= global.timePerBreak) {
+        } else if(!exercise && localTime >= routines[circuitsCompleted].exercises[exercisesCompleted].breakTime) {
             addTime(exercise);
         }
     }, secValue);
@@ -60,8 +60,9 @@ function addTime(ex) {
             }
         }
     }
+    console.log(`ejercicio: ${routines[circuitsCompleted].exercises[exercisesCompleted].name} duración: ${routines[circuitsCompleted].exercises[exercisesCompleted].name}descanso: ${routines[circuitsCompleted].exercises[exercisesCompleted].breakTime}`)
     exercise = !exercise;
-    beep();
+    // beep();
     if (circuitsCompleted >= routines.length) {
         timerCounterSecondsElem.innerHTML = "Terminaste!";
         resetTimer();

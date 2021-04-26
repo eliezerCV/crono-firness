@@ -6,19 +6,32 @@ export var routines = [
     {
         name: "Calentamiento",
         completed: false,
+        repeat: 1,
         exercises: [
             {name: "ejercicio de ejempo 1", completed: true, duration: 10, breakTime: 5}, 
-            {name: "ejercicio de ejempo 2", completed: true, duration: 10, breakTime: 5},
-            {name: "ejercicio de ejempo 3", completed: false, duration: 10, breakTime: 5}
+            {name: "ejercicio de ejempo 2", completed: true, duration: 12, breakTime: 6},
+            {name: "ejercicio de ejempo 3", completed: false, duration: 60, breakTime: 20},
+            {name: "ejercicio de ejempo 4", completed: false, duration: 60, breakTime: 20},
+            {name: "ejercicio de ejempo 5", completed: false, duration: 60, breakTime: 20},
+            {name: "ejercicio de ejempo 6", completed: false, duration: 60, breakTime: 20},
+            {name: "ejercicio de ejempo 7", completed: false, duration: 60, breakTime: 20},
+            {name: "ejercicio de ejempo 8", completed: false, duration: 60, breakTime: 20}
         ]
     },
     {
         name: "Cardio",
         completed: false,
+        repeat: 1,
         exercises: [
-            {name: "ejercicio de ejempo 1", completed: false, duration: 10, breakTime: 5}, 
-            {name: "ejercicio de ejempo 2", completed: false, duration: 10, breakTime: 5},
-            {name: "ejercicio de ejempo 3", completed: false, duration: 10, breakTime: 5}
+            {name: "ejercicio de ejempo 1", completed: false, duration: 60, breakTime: 20}, 
+            {name: "ejercicio de ejempo 2", completed: false, duration: 60, breakTime: 20},
+            {name: "ejercicio de ejempo 3", completed: false, duration: 60, breakTime: 20},
+            {name: "ejercicio de ejempo 3", completed: false, duration: 60, breakTime: 20},
+            {name: "ejercicio de ejempo 3", completed: false, duration: 60, breakTime: 20},
+            {name: "ejercicio de ejempo 3", completed: false, duration: 60, breakTime: 20},
+            {name: "ejercicio de ejempo 3", completed: false, duration: 60, breakTime: 20},
+            {name: "ejercicio de ejempo 3", completed: false, duration: 60, breakTime: 20},
+            {name: "ejercicio de ejempo 1", completed: false, duration: 60, breakTime: 20}
         ]
     }
 ];
